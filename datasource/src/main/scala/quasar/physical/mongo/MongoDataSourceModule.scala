@@ -39,7 +39,7 @@ object MongoDataSourceModule extends LightweightDatasourceModule {
   type Error = InitializationError[Json]
   type ErrorOrResult[F[_]] = Error \/ Result[F]
 
-  val defaultQueueSize: Int = 2048
+  val defaultQueueSize: Int = 8
 
   private def mkError[F[_]](config: Json, msg: String): ErrorOrResult[F] =
     DatasourceError
